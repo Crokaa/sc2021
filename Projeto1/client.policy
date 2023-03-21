@@ -1,0 +1,9 @@
+grant codeBase "file:bin/-" {
+	permission java.io.FilePermission "-", "write, read";
+	permission java.net.SocketPermission "*:1024-", "connect,resolve";
+	permission java.util.PropertyPermission "javax.net.ssl.trustStore", "write";
+};
+
+grant codeBase "file:${java.home}/lib/ext/*" { 
+	permission java.security.AllPermission; 
+};
